@@ -9,4 +9,3 @@ def pythagorean_triplet(triple_sum):
                         print(a*b*c)
 
 pythagorean_triplet(1000)
-#comment to test internet connection
