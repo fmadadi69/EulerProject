@@ -21,6 +21,6 @@ def largestPalindromeProduct(digits):
     return maxpal, nn1, nn2
 
 
-print(largestPalindromeProduct(3))
+print(largestPalindromeProduct(4))
 
 
