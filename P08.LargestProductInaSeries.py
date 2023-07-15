@@ -36,5 +36,3 @@ def largest_product_in_series(numlist, adjacent):
 
 
 print(largest_product_in_series(num, 13))
-
-
