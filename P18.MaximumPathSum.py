@@ -14,15 +14,32 @@ triangle_input = ''' 75
  63 66 04 68 89 53 67 30 73 16 69 87 40 31
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23'''
 
-triangle_list = [i.strip().split() for i in triangle_input.splitlines()]
+# triangle_input = '''3
+# 7 4
+# 2 4 6
+# 8 5 9 3'''
+def max_path_sum(triangle_sum):
+    triangle_list = [i.strip().split() for i in triangle_input.splitlines()]
+    #print(triangle_list)
 
-sum = triangle_list[0][0]
-current_index = 0
-for i in range(1, len(triangle_list[-1])):
-    next_index = [max(current_index-1, 0), current_index, current_index+1]
-    next_item =max(triangle_list[i][next_index[0]:next_index[2]])
-    sum+= next_item
-    current_index = next_item.index()
-    print(next_index, next_item, sum, current_index)
+    row = len(triangle_list)-1
+    max_list = [int(i) for i in triangle_list[-1]]
+    new_max_list = []
+
+    for i in range(row-1,-1, -1):
+        for j in range(len(triangle_list[i])):
+            new_max_list.append(int(triangle_list[i][j])+max(max_list[j],max_list[j+1]))
+        max_list = new_max_list
+        new_max_list = []
+
+    return max_list
+
+print(max_path_sum(triangle_input))
+
+
+
+
+
+
 
 
