@@ -6,14 +6,15 @@ def sum_proper_divisors(num):
     return sum(proper_divisors)
 
 
-#print(sum_proper_divisors(220))
+# print(sum_proper_divisors(220))
 
 
 def is_amicable(num):
     if sum_proper_divisors(sum_proper_divisors(num)) == num and num != sum_proper_divisors(num):
-        return  num, sum_proper_divisors(num)
+        return num, sum_proper_divisors(num)
 
-#print(is_amicable(284))
+
+# print(is_amicable(284))
 
 def sum_all_amicables(to_num):
     all_nums = [i for i in range(2, to_num)]
@@ -26,4 +27,3 @@ def sum_all_amicables(to_num):
 
 
 print(sum_all_amicables(10000))
-
